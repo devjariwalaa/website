@@ -5,6 +5,10 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 export default function Home() {
   return (
     <div style={{ position: "relative" }}>
+      <head>
+        <title>Dev Jariwala | Portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <VantaBackground />
 
       <main
@@ -13,7 +17,10 @@ export default function Home() {
           zIndex: 10,
           fontFamily: "Arial, sans-serif",
           color: "white",
-          padding: "2rem",
+          padding: "2rem 1rem",
+          maxWidth: "100%",
+          overflowWrap: "break-word",
+          wordBreak: "break-word",
         }}
       >
         {/* Intro Section */}
@@ -105,7 +112,7 @@ export default function Home() {
                   DAuth — authentication built right
                 </a>
               </h3>
-              <p style={{ color: "#ccc", marginBottom: "1rem" }}>
+              <p style={{ color: "#ccc", marginBottom: "1rem", overflowWrap: "break-word", wordBreak: "break-word" }}>
                 dauth is a full-stack authentication service i built from scratch using fastapi, postgresql, and redis. it's made for real-world apps that need secure, modern login flows. it supports jwt, refresh tokens, google oauth2, and session handling with redis. i built it to be production-ready, open source, and something any dev can actually use. it handles token revoking, rate limiting, and password security the right way—no shortcuts. i designed this without the use of firebase. i learned how jwt tokens work in real time and tested all my endpoint using Postman. once deployed, i can use dauth in any application i choose.
               </p>
               <ul style={{ color: "#bbb" }}>
