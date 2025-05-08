@@ -1,14 +1,9 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  reactStrictMode: true,
-  webpack(config) {
-    config.optimization.splitChunks = {
-      chunks: "all",
-      maxSize: 24000000, // 24MB limit for Cloudflare Pages
-    };
-    return config;
-  },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "export",
+  images: {
+    unoptimized: true
+  }
 };
 
 export default nextConfig;
