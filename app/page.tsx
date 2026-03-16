@@ -5,10 +5,6 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 export default function Home() {
   return (
     <div style={{ position: "relative" }}>
-      <head>
-        <title>Dev Jariwala | Portfolio</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
       <VantaBackground />
 
       <main
@@ -46,8 +42,8 @@ export default function Home() {
         </section>
 
         <div style={{ textAlign: "center", marginTop: "2rem" }}>
-          <a href="#education" style={{ textDecoration: "none", color: "#bbb" }}>
-
+          <a href="#education" style={{ textDecoration: "none", color: "#bbb", scrollBehavior: "smooth" }}>
+            ↓ scroll to learn more
           </a>
         </div>
 
@@ -66,20 +62,32 @@ export default function Home() {
             color: "white"
           }}>
             <h2 style={{ fontSize: "2.5rem", marginBottom: "3rem" }}>education</h2>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", justifyContent: "flex-start", alignItems: "center" }}>
-              <a href="https://ece.msu.edu/undergraduate/computer-engineering" target="_blank" rel="noopener noreferrer">
-                <img src="/msu-logo.png" alt="MSU Logo" style={{ width: "220px" }} />
-              </a>
-              <div>
-                <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>Michigan State University, East Lansing</h3>
-                <p>Currently pursuing a degree in Computer Engineering. Relevant coursework includes:</p>
-                <ul style={{ marginTop: "1rem", color: "#bbb" }}>
-                  <li>Calculus I, II, III</li>
-                  <li>Physics 183 (Physics for Scientists and Engineers)</li>
-                  <li>CSE 231 (Introduction to Programming in Python)</li>
-                  <li>CSE 232 (Programming in C++)</li>
-                  <li>CSE 260 (Discrete Structures in Computer Science)</li>
-                </ul>
+            <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", justifyContent: "flex-start", alignItems: "center" }}>
+                <a href="https://cse.engin.umich.edu/academics/undergraduate/computer-science-lsa-and-engineering/" target="_blank" rel="noopener noreferrer">
+                  <img src="/umich-logo.png" alt="University of Michigan Logo" style={{ width: "160px" }} />
+                </a>
+                <div>
+                  <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>University of Michigan, Ann Arbor</h3>
+                  <p>Admitted to Computer Science (College of Engineering).</p>
+                </div>
+              </div>
+
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", justifyContent: "flex-start", alignItems: "center" }}>
+                <a href="https://ece.msu.edu/undergraduate/computer-engineering" target="_blank" rel="noopener noreferrer">
+                  <img src="/msu-logo.png" alt="MSU Logo" style={{ width: "160px" }} />
+                </a>
+                <div>
+                  <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>Michigan State University, East Lansing</h3>
+                  <p>Previously pursued Computer Engineering coursework including:</p>
+                  <ul style={{ marginTop: "1rem", color: "#bbb" }}>
+                    <li>Calculus I, II, III</li>
+                    <li>Physics 183 (Physics for Scientists and Engineers)</li>
+                    <li>CSE 231 (Introduction to Programming in Python)</li>
+                    <li>CSE 232 (Programming in C++)</li>
+                    <li>CSE 260 (Discrete Structures in Computer Science)</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -111,7 +119,7 @@ export default function Home() {
               marginBottom: "2rem"
             }}>
               <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>
-                <a href="https://github.com/devjariwalaa/DAuth.git" target="_blank" rel="noopener noreferrer" style={{ color: "white", textDecoration: "underline" }}>
+                <a href="https://github.com/devjariwalaa/DAuth_Public.git" target="_blank" rel="noopener noreferrer" style={{ color: "white", textDecoration: "underline" }}>
                   DAuth — authentication built right
                 </a>
               </h3>
@@ -137,7 +145,7 @@ export default function Home() {
               marginBottom: "2rem"
             }}>
               <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>
-                <a href="#" target="_blank" rel="noopener noreferrer" style={{ color: "white", textDecoration: "underline" }}>
+                <a href="https://github.com/devjariwalaa/wicketly-live-score.git" target="_blank" rel="noopener noreferrer" style={{ color: "white", textDecoration: "underline" }}>
                   Wicketly — real time cricket scoring application
                 </a>
               </h3>
@@ -163,7 +171,7 @@ export default function Home() {
               marginBottom: "2rem"
             }}>
               <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>
-                <a href="#" target="_blank" rel="noopener noreferrer" style={{ color: "white", textDecoration: "underline" }}>
+                <a href="https://github.com/devjariwalaa/CricketConnect.git" target="_blank" rel="noopener noreferrer" style={{ color: "white", textDecoration: "underline" }}>
                   CricketConnect — cricket q&a + match history (mvp)
                 </a>
               </h3>

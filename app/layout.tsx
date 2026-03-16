@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "devjariwala.dev",
-  description: "Dev Jariwala's Portfolio",
+  title: "Dev Jariwala | Portfolio",
+  description: "Dev Jariwala's Portfolio - Computer Engineering student building impactful software",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({
