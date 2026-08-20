@@ -1,231 +1,68 @@
-"use client";
-import VantaBackground from "../components/VantaBackground";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaArrowRight, FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { HiArrowDownTray, HiArrowUpRight } from "react-icons/hi2";
+import Image from "next/image";
+import styles from "./page.module.css";
+
+const experience = [
+  { company: "Hyundai America Technical Center", role: "Software Engineer Intern · via KPIT Technologies", date: "Jul — Aug 2026", description: "Expanded regression coverage across Hyundai’s connected-car infotainment stack, pairing automated validation with hands-on in-vehicle testing.", impact: ["20+ automated tests", "5 ccNC modules", "100+ engineer org"] },
+  { company: "KPIT Technologies", role: "Software Engineer Intern", date: "Jun — Jul 2026", description: "Built an internal authentication and user-management platform with secure, role-aware flows spanning the full product.", impact: ["6 REST APIs", "10+ product screens", "Angular · Flask · MySQL"] },
+  { company: "Necessities", role: "Software Engineer Intern", date: "Sep 2025 — Apr 2026", description: "Shipped marketplace infrastructure and experiences for a growing campus platform—from performant discovery to messaging and live inventory updates.", impact: ["100+ active users", "1,000+ listings", "50+ React components"] },
+];
+
+const projects = [
+  { index: "01", title: "MiniRedis", eyebrow: "Systems engineering", description: "A Redis-style in-memory database built from the wire protocol up, with concurrent clients, crash recovery, expiration, and memory-aware eviction.", metric: "52K+", metricLabel: "operations / second", tech: ["C++20", "TCP/IP", "Multithreading", "CMake"] },
+  { index: "02", title: "Wicketly", eyebrow: "Real-time product", description: "A synchronized cricket scoring and analytics platform with a rules engine for live match state, player statistics, and second-innings targets.", metric: "15+", metricLabel: "tournament rules", tech: ["React", "TypeScript", "Supabase", "PostgreSQL"], href: "https://github.com/devjariwalaa/wicketly-live-score" },
+];
 
 export default function Home() {
   return (
-    <div style={{ position: "relative" }}>
-      <VantaBackground />
+    <main className={styles.siteShell}>
+      <div className={styles.noise} aria-hidden="true" />
+      <header className={styles.nav}>
+        <a className={styles.wordmark} href="#top" aria-label="Dev Jariwala, home">Dev Jariwala<span>.</span></a>
+        <nav aria-label="Primary navigation"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a></nav>
+        <a className={styles.resumeLink} href="/resume">Resume <HiArrowDownTray /></a>
+      </header>
 
-      <main
-        style={{
-          position: "relative",
-          zIndex: 10,
-          fontFamily: "Arial, sans-serif",
-          color: "white",
-          padding: "2rem 1rem",
-          maxWidth: "100%",
-          overflowWrap: "break-word",
-          wordBreak: "break-word",
-        }}
-      >
-        {/* Intro Section */}
-        <section style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", paddingLeft: "2rem", paddingRight: "2rem" }}>
-          <h1 style={{ fontSize: "4rem", fontWeight: "bold", marginBottom: "1.5rem" }}>Dev Jariwala</h1>
-          <p style={{
-            fontSize: "1.3rem",
-            lineHeight: "1.8",
-            color: "#e0e0e0",
-            maxWidth: "900px",
-            marginBottom: "1rem"
-          }}>
-            i'm a builder & engineer determined to build impactful software and create real-world applications that solve meaningful problems. i'm currently seeking internship opportunities to gain hands-on experience and grow alongside innovative companies.
-          </p>
-          <div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
-            <a href="https://github.com/devjariwalaa" style={{ color: "white", textDecoration: "none" }} target="_blank" rel="noopener noreferrer">
-              <FaGithub /> GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/dev-jariwala-b82b5b2b5/" style={{ color: "white", textDecoration: "none" }} target="_blank" rel="noopener noreferrer">
-              <FaLinkedin /> LinkedIn
-            </a>
-          </div>
-        </section>
-
-        <div style={{ textAlign: "center", marginTop: "2rem" }}>
-          <a href="#education" style={{ textDecoration: "none", color: "#bbb", scrollBehavior: "smooth" }}>
-            ↓ scroll to learn more
-          </a>
+      <section className={styles.hero} id="top">
+        <div className={styles.heroKicker}><Image src="/umich-logo.png" alt="University of Michigan" width={58} height={58} priority /><span><strong>University of Michigan</strong>Computer Science</span></div>
+        <h1>I want to build<br />something that <em>matters.</em></h1>
+        <div className={styles.heroFooter}>
+          <p>I’m Dev, a software engineer who wants to build technology that changes the world and makes a real difference in people’s lives.</p>
+          <a className={styles.primaryCta} href="#work">Explore my work <FaArrowRight /></a>
         </div>
+        <div className={styles.heroOrb} aria-hidden="true"><span>BUILD</span><span>MEASURE</span><span>IMPROVE</span></div>
+      </section>
 
-        {/* Education Block */}
-        <section id="education" style={{
-          padding: "4rem 2rem 1rem",
-        }}>
-          <div style={{
-            background: "linear-gradient(135deg, rgba(20,20,20,0.8), rgba(40,40,40,0.8))",
-            backdropFilter: "blur(12px)",
-            padding: "3rem",
-            borderRadius: "1.5rem",
-            boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
-            maxWidth: "1200px",
-            margin: "0 auto 1rem auto",
-            color: "white"
-          }}>
-            <h2 style={{ fontSize: "2.5rem", marginBottom: "3rem" }}>education</h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", justifyContent: "flex-start", alignItems: "center" }}>
-                <a href="https://cse.engin.umich.edu/academics/undergraduate/computer-science-lsa-and-engineering/" target="_blank" rel="noopener noreferrer">
-                  <img src="/umich-logo.png" alt="University of Michigan Logo" style={{ width: "160px" }} />
-                </a>
-                <div>
-                  <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>University of Michigan, Ann Arbor</h3>
-                  <p>Admitted to Computer Science (College of Engineering).</p>
-                </div>
-              </div>
+      <section className={styles.section} id="work">
+        <div className={styles.sectionHeading}><span>Selected work</span><h2>Things I’ve<br />built.</h2></div>
+        <div className={styles.projects}>{projects.map((project) => (
+          <article className={styles.projectCard} key={project.title}>
+            <div className={styles.projectTopline}><span>{project.index} / {project.eyebrow}</span>{project.href && <a href={project.href} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on GitHub`}><HiArrowUpRight /></a>}</div>
+            <div className={styles.projectGrid}><div><h3>{project.title}</h3><p>{project.description}</p></div><div className={styles.metric}><strong>{project.metric}</strong><span>{project.metricLabel}</span></div></div>
+            <div className={styles.techList}>{project.tech.map((item) => <span key={item}>{item}</span>)}</div>
+          </article>
+        ))}</div>
+      </section>
 
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", justifyContent: "flex-start", alignItems: "center" }}>
-                <a href="https://ece.msu.edu/undergraduate/computer-engineering" target="_blank" rel="noopener noreferrer">
-                  <img src="/msu-logo.png" alt="MSU Logo" style={{ width: "160px" }} />
-                </a>
-                <div>
-                  <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>Michigan State University, East Lansing</h3>
-                  <p>Previously pursued Computer Engineering coursework including:</p>
-                  <ul style={{ marginTop: "1rem", color: "#bbb" }}>
-                    <li>Calculus I, II, III</li>
-                    <li>Physics 183 (Physics for Scientists and Engineers)</li>
-                    <li>CSE 231 (Introduction to Programming in Python)</li>
-                    <li>CSE 232 (Programming in C++)</li>
-                    <li>CSE 260 (Discrete Structures in Computer Science)</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      <section className={`${styles.section} ${styles.experienceSection}`} id="experience">
+        <div className={`${styles.sectionHeading} ${styles.compactHeading}`}><span>Experience</span></div>
+        <div className={styles.timeline}>{experience.map((item, index) => (
+          <article className={styles.role} key={item.company}><div className={styles.roleNumber}>0{index + 1}</div><div className={styles.roleMain}><span className={styles.roleDate}>{item.date}</span><h3>{item.company}</h3><h4>{item.role}</h4><p>{item.description}</p><div className={styles.impactList}>{item.impact.map((impact) => <span key={impact}>{impact}</span>)}</div></div></article>
+        ))}</div>
+      </section>
 
-        {/* Projects Showcase */}
-        <section style={{
-          padding: "2rem 2rem 3rem",
-        }}>
-          <div style={{
-            background: "linear-gradient(135deg, rgba(20,20,20,0.8), rgba(40,40,40,0.8))",
-            backdropFilter: "blur(12px)",
-            padding: "3rem",
-            borderRadius: "1.5rem",
-            boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
-            maxWidth: "1200px",
-            margin: "0 auto",
-            color: "white"
-          }}>
-            <h2 style={{ fontSize: "2.5rem", marginBottom: "3rem" }}>projects</h2>
-            
-            {/* DAuth Project */}
-            <div style={{
-              backgroundColor: "rgba(0,0,0,0.6)",
-              backdropFilter: "blur(8px)",
-              padding: "2rem",
-              borderRadius: "1rem",
-              boxShadow: "0 8px 20px rgba(0,0,0,0.4)",
-              marginBottom: "2rem"
-            }}>
-              <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>
-                <a href="https://github.com/devjariwalaa/DAuth_Public.git" target="_blank" rel="noopener noreferrer" style={{ color: "white", textDecoration: "underline" }}>
-                  DAuth — authentication built right
-                </a>
-              </h3>
-              <p style={{ color: "#ccc", marginBottom: "1rem", overflowWrap: "break-word", wordBreak: "break-word" }}>
-                dauth is a full-stack authentication service i built from scratch using fastapi, postgresql, and redis. it's made for real-world apps that need secure, modern login flows. it supports jwt, refresh tokens, google oauth2, and session handling with redis. i built it to be production-ready, open source, and something any dev can actually use. it handles token revoking, rate limiting, and password security the right way—no shortcuts. i designed this without the use of firebase. i learned how jwt tokens work in real time and tested all my endpoint using Postman. once deployed, i can use dauth in any application i choose.
-              </p>
-              <ul style={{ color: "#bbb" }}>
-                <li>JWT + refresh token flow</li>
-                <li>OAuth2 (Google login)</li>
-                <li>Redis-backed sessions</li>
-                <li>Rate limiting + hashed passwords</li>
-                <li>Token blacklisting & session invalidation</li>
-              </ul>
-            </div>
+      <section className={styles.about} id="about">
+        <p className={styles.aboutLabel}>A little about me</p>
+        <p className={styles.aboutStatement}>I’m curious about how things work, and I want to use that curiosity to <em>build something meaningful.</em></p>
+        <div className={styles.aboutBottom}><p>Currently pursuing a B.S.E. in Computer Science at the University of Michigan. Based in Michigan, building wherever the interesting problem is.</p><div className={styles.skills}><span>C++</span><span>Python</span><span>TypeScript</span><span>React</span><span>PostgreSQL</span><span>Docker</span><span>Linux</span><span>GCP</span></div></div>
+      </section>
 
-            {/* Wicketly Project */}
-            <div style={{
-              backgroundColor: "rgba(0,0,0,0.6)",
-              backdropFilter: "blur(8px)",
-              padding: "2rem",
-              borderRadius: "1rem",
-              boxShadow: "0 8px 20px rgba(0,0,0,0.4)",
-              marginBottom: "2rem"
-            }}>
-              <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>
-                <a href="https://github.com/devjariwalaa/wicketly-live-score.git" target="_blank" rel="noopener noreferrer" style={{ color: "white", textDecoration: "underline" }}>
-                  Wicketly — real time cricket scoring application
-                </a>
-              </h3>
-              <p style={{ color: "#ccc", marginBottom: "1rem", overflowWrap: "break-word", wordBreak: "break-word" }}>
-                wicketly is a full-stack scoring platform built with react (typescript), supabase (postgresql), and google cloud. it supports 100% real-time ball-by-ball updates for matches up to 50 overs. the scoring engine handles 20+ cricket rules including runs, extras, wickets, over transitions, and chase logic, enabling instant required run rate & win prediction calculations.
-              </p>
-              <ul style={{ color: "#bbb" }}>
-                <li>Real-time ball-by-ball scoring updates</li>
-                <li>Advanced cricket rules engine with 20+ rules</li>
-                <li>Multi-tenant architecture with role-based access</li>
-                <li>Row-Level Security and OAuth 2.0 Google login</li>
-                <li>Instant win prediction and run rate calculations</li>
-              </ul>
-            </div>
-
-            {/* CricketConnect Project */}
-            <div style={{
-              backgroundColor: "rgba(0,0,0,0.6)",
-              backdropFilter: "blur(8px)",
-              padding: "2rem",
-              borderRadius: "1rem",
-              boxShadow: "0 8px 20px rgba(0,0,0,0.4)",
-              marginBottom: "2rem"
-            }}>
-              <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>
-                <a href="https://github.com/devjariwalaa/CricketConnect.git" target="_blank" rel="noopener noreferrer" style={{ color: "white", textDecoration: "underline" }}>
-                  CricketConnect — cricket q&a + match history (mvp)
-                </a>
-              </h3>
-              <p style={{ color: "#ccc", marginBottom: "1rem", overflowWrap: "break-word", wordBreak: "break-word" }}>
-                cricketconnect is a flutter mobile mvp (ios/android) with firebase authentication for secure sign-in and persistent sessions. it uses firestore to save and retrieve user match history in real time, and integrates an ollama-powered chatbot for cricket q&a and basic match insights.
-              </p>
-              <ul style={{ color: "#bbb" }}>
-                <li>Flutter mobile app for iOS and Android</li>
-                <li>Firebase Authentication and Firestore integration</li>
-                <li>Ollama-powered chatbot for cricket Q&A</li>
-                <li>Match history tracking and real-time updates</li>
-                <li>Core flows: login, match summaries, history, and chat</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Hobbies Section */}
-        <section style={{
-          padding: "2rem 2rem 3rem",
-        }}>
-          <div style={{
-            background: "linear-gradient(135deg, rgba(20,20,20,0.8), rgba(40,40,40,0.8))",
-            backdropFilter: "blur(12px)",
-            padding: "3rem",
-            borderRadius: "1.5rem",
-            boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
-            maxWidth: "1200px",
-            margin: "0 auto",
-            color: "white"
-          }}>
-            <h2 style={{ fontSize: "2.5rem", marginBottom: "3rem" }}>hobbies</h2>
-            <div style={{
-              backgroundColor: "rgba(0,0,0,0.6)",
-              backdropFilter: "blur(8px)",
-              padding: "2rem",
-              borderRadius: "1rem",
-              boxShadow: "0 8px 20px rgba(0,0,0,0.4)"
-            }}>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", justifyContent: "space-around", alignItems: "center" }}>
-                <div style={{ textAlign: "center" }}>
-                  <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>🏏 Cricket</h3>
-                 
-                </div>
-                <div style={{ textAlign: "center" }}>
-                  <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>🏀 Basketball</h3>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-      </main>
-    </div>
+      <footer className={styles.footer}>
+        <div><span>Have an interesting problem?</span><a href="mailto:jariwa@umich.edu">Let’s build something.</a></div>
+        <div className={styles.socials}><a href="https://github.com/devjariwalaa" target="_blank" rel="noreferrer"><FaGithub /> GitHub</a><a href="https://linkedin.com/in/dev-jariwalaa" target="_blank" rel="noreferrer"><FaLinkedinIn /> LinkedIn</a></div>
+        <p>© {new Date().getFullYear()} Dev Jariwala</p>
+      </footer>
+    </main>
   );
 }

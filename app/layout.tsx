@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -13,9 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dev Jariwala | Portfolio",
-  description: "Dev Jariwala's Portfolio - Computer Engineering student building impactful software",
-  viewport: "width=device-width, initial-scale=1",
+  title: "Dev Jariwala — Software Engineer",
+  description: "Software engineer and computer science student building high-performance systems and thoughtful digital products.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
