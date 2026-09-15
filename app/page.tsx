@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { FiGithub, FiLinkedin, FiMail, FiArrowUpRight, FiCloud, FiDatabase, FiActivity } from "react-icons/fi";
 import styles from "./page.module.css";
 
 const experience = [
@@ -16,19 +18,20 @@ export default function Home() {
   return (
     <main className={styles.page} id="top">
       <header className={styles.header}>
-        <h1>Dev Jariwala</h1>
-        <p>Computer Science · University of Michigan</p>
+        <div className={styles.topline}><span className={styles.monogram}>dj.</span><span>Portfolio / 2026</span></div>
+        <div className={styles.intro}><div><p className={styles.eyebrow}>Software engineer</p><h1>Dev Jariwala<span>.</span></h1><p className={styles.subtitle}>Computer Science @ Michigan</p></div>
+        <div className={styles.school}><Image src="/umich-logo.png" alt="University of Michigan block M" width={66} height={66} priority /><span>University of Michigan<strong>Computer Science</strong></span></div></div>
         <nav className={styles.links} aria-label="Contact and resume">
-          <a href="mailto:jariwa@umich.edu">Email</a>
-          <a href="https://github.com/devjariwalaa" target="_blank" rel="noreferrer">GitHub ↗</a>
-          <a href="https://www.linkedin.com/in/dev-jariwalaa/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-          <a href="/resume">Resume ↗</a>
+          <a href="mailto:jariwa@umich.edu"><FiMail /> Email</a>
+          <a href="https://github.com/devjariwalaa" target="_blank" rel="noreferrer"><FiGithub /> GitHub <FiArrowUpRight /></a>
+          <a href="https://www.linkedin.com/in/dev-jariwalaa/" target="_blank" rel="noreferrer"><FiLinkedin /> LinkedIn <FiArrowUpRight /></a>
+          <a href="/resume">Resume <FiArrowUpRight /></a>
         </nav>
       </header>
 
       <section className={styles.section} aria-labelledby="experience">
-        <h2 id="experience">Experience</h2>
-        <div>{experience.map((item) => (
+        <div className={styles.sectionHeading}><h2 id="experience">Experience</h2><span>01 / Where I’ve worked</span></div>
+        <div className={styles.experienceGrid}>{experience.map((item) => (
           <article className={styles.entry} key={item.company}>
             <div className={styles.entryHeading}><h3>{item.company}</h3><span className={styles.date}>{item.date}</span></div>
             <p className={styles.role}>{item.role}</p>
@@ -38,9 +41,10 @@ export default function Home() {
       </section>
 
       <section className={styles.section} aria-labelledby="projects">
-        <h2 id="projects">Projects</h2>
-        <div>{projects.map((project) => (
-          <article className={styles.entry} key={project.title}>
+        <div className={styles.sectionHeading}><h2 id="projects">Projects</h2><span>02 / What I’ve built</span></div>
+        <div className={styles.projectGrid}>{projects.map((project) => (
+          <article className={`${styles.entry} ${styles.projectCard}`} key={project.title}>
+            <div className={styles.projectArt} aria-hidden="true">{project.title === "StormRoute" ? <FiCloud /> : project.title === "MiniRedis" ? <FiDatabase /> : <FiActivity />}<span>{project.title === "StormRoute" ? "ROUTES / WEATHER" : project.title === "MiniRedis" ? "MEMORY / SYSTEMS" : "CRICKET / LIVE"}</span></div>
             <div className={styles.entryHeading}><h3>{project.title}</h3><a className={styles.projectLink} href={project.href} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on GitHub`}>GitHub ↗</a></div>
             <p className={styles.description}>{project.description}</p>
           </article>

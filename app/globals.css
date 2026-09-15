@@ -1,4 +1,4 @@
-:root { --background:#fafaf7; --foreground:#12130f; }
+:root { --background:#f2f1e9; --foreground:#12130f; }
 * { box-sizing:border-box; padding:0; margin:0; }
 html { scroll-behavior:smooth; background:var(--background); }
 body { color:var(--foreground); background:var(--background); font-family:Arial,Helvetica,sans-serif; -webkit-font-smoothing:antialiased; }
