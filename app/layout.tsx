@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Dev Jariwala — Software Engineer",
-  description: "Software engineer and computer science student building high-performance systems and thoughtful digital products.",
+  description: "Computer Science at the University of Michigan. Experience, projects, and contact information.",
 };
 
 export const viewport: Viewport = {
