@@ -3,24 +3,25 @@ import { FiGithub, FiLinkedin, FiMail, FiArrowUpRight, FiCloud, FiDatabase, FiAc
 import styles from "./page.module.css";
 
 const experience = [
-  { company: "Hyundai America Technical Center", role: "Software Engineer Intern · via KPIT Technologies", date: "Jul — Aug 2026", description: "Automated regression tests and validated connected-car infotainment systems." },
-  { company: "KPIT Technologies", role: "Software Engineer Intern", date: "Jun — Jul 2026", description: "Built an authentication and user-management platform with Angular, Flask, and MySQL." },
-  { company: "Necessities", role: "Software Engineer Intern", date: "Sep 2025 — Apr 2026", description: "Developed search, messaging, and live inventory features for a campus marketplace." },
+  { company: "Hyundai America Technical Center (HATCI) via KPIT Technologies", role: "Software Engineer Intern, Client Assignment", date: "Jul 2026 — Aug 2026", description: "Built 20+ automated Robot Framework test cases in Python for five Hyundai ccNC modules and expanded regression coverage for SiriusXM 360L services across vehicle trims." },
+  { company: "KPIT Technologies", role: "Software Engineer Intern", date: "Jun 2026 — Jul 2026", description: "Built a JWT-based authentication platform in Angular, Flask, and MySQL for internal tooling and implemented role-based access for 50+ users across platform modules." },
+  { company: "Necessities", role: "Software Engineer Intern", date: "Sep 2025 — Apr 2026", description: "Built 50+ reusable React components for marketplace search and discovery, plus PostgreSQL-backed REST APIs supporting 100+ active users and optimized database queries to reduce page load times by 30%." },
 ];
 
 const projects = [
-  { title: "StormRoute", description: "Weather forecasts along a driving route, with comparisons of departure times and alternate routes.", href: "https://github.com/devjariwalaa/StormRoute" },
-  { title: "MiniRedis", description: "A C++ in-memory database with concurrent clients, crash recovery, key expiration, and memory eviction.", href: "https://github.com/devjariwalaa/MiniRedis" },
-  { title: "Wicketly", description: "Live cricket scoring and match statistics built with React, TypeScript, and Supabase.", href: "https://github.com/devjariwalaa/wicketly-live-score" },
+  { title: "StormRoute", description: "Built a weather-aware routing engine in Next.js/TypeScript that evaluates six departure windows and compares three routes using live weather and road geometry data.", href: "https://github.com/devjariwalaa/StormRoute" },
+  { title: "MiniRedis", description: "Built a Redis-style key-value store in C++20 with thread-safe concurrency, TTL expiry, LRU eviction, and append-only persistence logging.", href: "https://github.com/devjariwalaa/MiniRedis" },
+  { title: "Cricket Scoring & Analytics Platform", description: "Built a live cricket scoring platform supporting synchronized workflows with WebSockets, tournament rule logic, and secure multi-layer authorization.", href: "https://github.com/devjariwalaa/wicketly-live-score" },
 ];
 
 export default function Home() {
   return (
     <main className={styles.page} id="top">
       <header className={styles.header}>
-        <div className={styles.topline}><span className={styles.monogram}>dj.</span><span>Portfolio / 2026</span></div>
+        <div className={styles.topline}><span className={styles.monogram}>dj.</span><span><i /> Portfolio / 2026</span></div>
         <div className={styles.intro}><div><p className={styles.eyebrow}>Software engineer</p><h1>Dev Jariwala<span>.</span></h1><p className={styles.subtitle}>Computer Science @ Michigan</p></div>
         <div className={styles.school}><Image src="/umich-logo.png" alt="University of Michigan block M" width={66} height={66} priority /><span>University of Michigan<strong>Computer Science</strong></span></div></div>
+        <p className={styles.heroNote}>I build thoughtful products and reliable systems — from connected-car testing to real-time sports platforms.</p>
         <nav className={styles.links} aria-label="Contact and resume">
           <a href="mailto:jariwa@umich.edu"><FiMail /> Email</a>
           <a href="https://github.com/devjariwalaa" target="_blank" rel="noreferrer"><FiGithub /> GitHub <FiArrowUpRight /></a>
@@ -41,7 +42,7 @@ export default function Home() {
       </section>
 
       <section className={styles.section} aria-labelledby="projects">
-        <div className={styles.sectionHeading}><h2 id="projects">Projects</h2><span>02 / What I’ve built</span></div>
+        <div className={styles.sectionHeading}><h2 id="projects">Selected work</h2><span>02 / What I’ve built</span></div>
         <div className={styles.projectGrid}>{projects.map((project) => (
           <article className={`${styles.entry} ${styles.projectCard}`} key={project.title}>
             <div className={styles.projectArt} aria-hidden="true">{project.title === "StormRoute" ? <FiCloud /> : project.title === "MiniRedis" ? <FiDatabase /> : <FiActivity />}<span>{project.title === "StormRoute" ? "ROUTES / WEATHER" : project.title === "MiniRedis" ? "MEMORY / SYSTEMS" : "CRICKET / LIVE"}</span></div>
