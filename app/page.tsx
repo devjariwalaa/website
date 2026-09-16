@@ -3,15 +3,15 @@ import { FiGithub, FiLinkedin, FiMail, FiArrowUpRight, FiCloud, FiDatabase, FiAc
 import styles from "./page.module.css";
 
 const experience = [
-  { company: "Hyundai America Technical Center", role: "Software Engineer Intern · via KPIT Technologies", date: "Jul — Aug 2026", description: "Automated regression tests and validated connected-car infotainment systems." },
-  { company: "KPIT Technologies", role: "Software Engineer Intern", date: "Jun — Jul 2026", description: "Built an authentication and user-management platform with Angular, Flask, and MySQL." },
-  { company: "Necessities", role: "Software Engineer Intern", date: "Sep 2025 — Apr 2026", description: "Developed search, messaging, and live inventory features for a campus marketplace." },
+  { company: "Hyundai America Technical Center (HATCI) via KPIT Technologies", role: "Software Engineer Intern, Client Assignment", date: "Jul 2026 — Aug 2026", description: "Built 20+ automated Robot Framework test cases in Python for five Hyundai ccNC modules and expanded regression coverage for SiriusXM 360L services across vehicle trims." },
+  { company: "KPIT Technologies", role: "Software Engineer Intern", date: "Jun 2026 — Jul 2026", description: "Built a JWT-based authentication platform in Angular, Flask, and MySQL for internal tooling and implemented role-based access for 50+ users across platform modules." },
+  { company: "Necessities", role: "Software Engineer Intern", date: "Sep 2025 — Apr 2026", description: "Built 50+ reusable React components for marketplace search and discovery, plus PostgreSQL-backed REST APIs supporting 100+ active users and optimized database queries to reduce page load times by 30%." },
 ];
 
 const projects = [
-  { title: "StormRoute", description: "Weather forecasts along a driving route, with comparisons of departure times and alternate routes.", href: "https://github.com/devjariwalaa/StormRoute" },
-  { title: "MiniRedis", description: "A C++ in-memory database with concurrent clients, crash recovery, key expiration, and memory eviction.", href: "https://github.com/devjariwalaa/MiniRedis" },
-  { title: "Wicketly", description: "Live cricket scoring and match statistics built with React, TypeScript, and Supabase.", href: "https://github.com/devjariwalaa/wicketly-live-score" },
+  { title: "StormRoute", description: "Built a weather-aware routing engine in Next.js/TypeScript that evaluates six departure windows and compares three routes using live weather and road geometry data.", href: "https://github.com/devjariwalaa/StormRoute" },
+  { title: "MiniRedis", description: "Built a Redis-style key-value store in C++20 with thread-safe concurrency, TTL expiry, LRU eviction, and append-only persistence logging.", href: "https://github.com/devjariwalaa/MiniRedis" },
+  { title: "Cricket Scoring & Analytics Platform", description: "Built a live cricket scoring platform supporting synchronized workflows with WebSockets, tournament rule logic, and secure multi-layer authorization.", href: "https://github.com/devjariwalaa/wicketly-live-score" },
 ];
 
 export default function Home() {
