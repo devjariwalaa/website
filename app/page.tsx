@@ -18,9 +18,10 @@ export default function Home() {
   return (
     <main className={styles.page} id="top">
       <header className={styles.header}>
-        <div className={styles.topline}><span className={styles.monogram}>dj.</span><span>Portfolio / 2026</span></div>
+        <div className={styles.topline}><span className={styles.monogram}>dj.</span><span><i /> Portfolio / 2026</span></div>
         <div className={styles.intro}><div><p className={styles.eyebrow}>Software engineer</p><h1>Dev Jariwala<span>.</span></h1><p className={styles.subtitle}>Computer Science @ Michigan</p></div>
         <div className={styles.school}><Image src="/umich-logo.png" alt="University of Michigan block M" width={66} height={66} priority /><span>University of Michigan<strong>Computer Science</strong></span></div></div>
+        <p className={styles.heroNote}>I build thoughtful products and reliable systems — from connected-car testing to real-time sports platforms.</p>
         <nav className={styles.links} aria-label="Contact and resume">
           <a href="mailto:jariwa@umich.edu"><FiMail /> Email</a>
           <a href="https://github.com/devjariwalaa" target="_blank" rel="noreferrer"><FiGithub /> GitHub <FiArrowUpRight /></a>
@@ -41,7 +42,7 @@ export default function Home() {
       </section>
 
       <section className={styles.section} aria-labelledby="projects">
-        <div className={styles.sectionHeading}><h2 id="projects">Projects</h2><span>02 / What I’ve built</span></div>
+        <div className={styles.sectionHeading}><h2 id="projects">Selected work</h2><span>02 / What I’ve built</span></div>
         <div className={styles.projectGrid}>{projects.map((project) => (
           <article className={`${styles.entry} ${styles.projectCard}`} key={project.title}>
             <div className={styles.projectArt} aria-hidden="true">{project.title === "StormRoute" ? <FiCloud /> : project.title === "MiniRedis" ? <FiDatabase /> : <FiActivity />}<span>{project.title === "StormRoute" ? "ROUTES / WEATHER" : project.title === "MiniRedis" ? "MEMORY / SYSTEMS" : "CRICKET / LIVE"}</span></div>
